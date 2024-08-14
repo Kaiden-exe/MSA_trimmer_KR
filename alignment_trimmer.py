@@ -5,7 +5,6 @@ from __future__ import division, print_function
 from Bio import SeqIO
 from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
-from Bio.Alphabet import SingleLetterAlphabet
 import argparse
 import os
 
@@ -137,7 +136,7 @@ class Alignment():
             trimmed_seq = ''.join(trimmed_seq_list)
             input_seq = self._fasta[i]
             out_record = SeqRecord(
-                Seq(trimmed_seq, SingleLetterAlphabet),
+                Seq(trimmed_seq),
                 id=input_seq.id,
                 description=input_seq.description
             )
